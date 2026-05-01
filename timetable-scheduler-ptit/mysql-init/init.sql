@@ -1,5 +1,10 @@
-CREATE DATABASE IF NOT EXISTS `schedule`;
+CREATE DATABASE IF NOT EXISTS `schedule`
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
 USE `schedule`;
+
+-- Ensure client/connection uses UTF-8 during import
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- 1. Create Tables
 CREATE TABLE IF NOT EXISTS faculties (
@@ -276,8 +281,8 @@ INSERT IGNORE INTO subjects (id, subject_code, subject_name, students_per_class,
 
 -- Insert dữ liệu tkb_templates
 INSERT IGNORE INTO tkb_templates (id, template_id, total_periods, day_of_week, kip, start_period, period_length, week_schedule, total_used, semester_id, row_order) VALUES
-(1, 'TPL01', 3, 2, 1, 1, 3, '[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0]', 0, 1, 1),
-(2, 'TPL02', 3, 3, 2, 4, 3, '[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0]', 0, 1, 2);
+(1, 'TPL01', 45, 2, 1, 1, 3, '[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0]', 0, 1, 1),
+(2, 'TPL02', 45, 3, 2, 4, 3, '[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0]', 0, 1, 2);
 
 -- Insert dữ liệu room_occupancies
 INSERT IGNORE INTO room_occupancies (id, room_id, semester_id, day_of_week, period, unique_key, note) VALUES
