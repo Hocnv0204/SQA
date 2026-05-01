@@ -40,6 +40,4 @@ build/
 
 #src/main/resources/application.yml
 
-Dockerfile
-docker-compose.yml
 
